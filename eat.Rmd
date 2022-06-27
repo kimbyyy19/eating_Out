@@ -26,11 +26,50 @@ require(tidyverse)
 require(tigerstats)
 require(knitr)
 require(foreign)
-GSS <-read.dta(file="GSS1998.dta")
+GSS <-read.dta(file="GSS1996.dta")
 GSS <- droplevels(GSS)
 mydata <- select(GSS,race,age,eatout)
 mydata <- na.omit(mydata)
 ```
+
+
+```{r}
+barchartGC(~race + eatout,data=mydata)
+barchartGC(~race + eatout,data=mydata, type="percent")
+
+```
+
+
+First,when looking at Frequency we look at the white man about 950 ,black man is about 150 and the other is about 100 that have been servers and when looking at the percent it's about 80% of the white people that goes out while with black and other they  have 65% almost the same amount.
+
+
+```{r}
+table2 <- xtabs(~race + eatout,data=mydata)
+rowPerc(table2)
+colPerc(table2)
+```
+We can see that in the white that said yes was 82.83%, while with the black that said yes was 68.75 .In the different between between percent is about 14%.with the other is 77.78 the different between the other with white is 55% but with the black is 9%.It seem that the black are the least that go out and eat,but with the white is the highest percnt between the three.
+
+
+
+
+
+
+
+
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+```
+
+
+
+
+
+
+
+
 
 
 

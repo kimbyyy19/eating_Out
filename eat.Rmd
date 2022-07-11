@@ -43,14 +43,14 @@ barchartGC(~race + eatout,data=mydata, type="percent")
 
 Based on the frequency table above, which shows the volume of people who eat out and people who do not eat out for each racial group, we can see that about 950 white people eat out while about 200 do not. Meanwhile, about 200 black people eat out while about 100 do not. For the other racial groups, about 100 people eat out while about 50 do not. Putting this into percentages,80% of white people eat out while 20% do not. Meanwhile black and others have about the same percentages with 70% of the people eat out while 30% do not.    
 
-
+### Numerical Results
 
 ```{r}
 table2 <- xtabs(~race + eatout,data=mydata)
 rowPerc(table2)
 colPerc(table2)
 ```
-We can see that in the white that said yes was 82.83%, while with the black that said yes was 68.75 .In the different between between percent is about 14%.with the other is 77.78 the different between the other with white is 55% but with the black is 9%.It seem that the black are the least that go out and eat,but with the white is the highest percent between the three.
+The numerical summary above shows the actual values of the percentages of people who eat out and do not eat out for each racial groups. The data above confirms the estimations from the graphical results, and it shows that for white people, 82.93% eat out and 17.17% do not. Similar to the observations made previously, black people and others have a similar ratio of about 70% of people who eat out while 31% of people who do not. Furthermore, the table above shows that white people make up the majority of people who claim that they eat out. Specifically, among the people answered yes to eating out, 82.94% were white people while 11.55% were black and 5.51% were others. 
 
 
 

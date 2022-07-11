@@ -53,17 +53,14 @@ colPerc(table2)
 The numerical summary above shows the actual values of the percentages of people who eat out and do not eat out for each racial groups. The data above confirms the estimations from the graphical results, and it shows that for white people, 82.93% eat out and 17.17% do not. Similar to the observations made previously, black people and others have a similar ratio of about 70% of people who eat out while 31% of people who do not. Furthermore, the table above shows that white people make up the majority of people who claim that they eat out. Specifically, among the people answered yes to eating out, 82.94% were white people while 11.55% were black and 5.51% were others. 
 
 
-
-
-
-
+###Inferential results
 
 ```{r}
 chisq.test(table2)
 chisqtestGC(table2)
 fisher.test(table2)
 ```
-
+Based on the Chi-squared test above, the p-value determined is a small number which means that there is a difference between the frequency of eating out of the the three racial groups. Therefore, we can reject the null hypothesis. To determine specifically which groups are different, another type of test will be conducted. 
 
 
 
@@ -138,10 +135,14 @@ fisherXY = function(x, y, confL = 0, printAll=FALSE){
 fisherXY(mydata$race,mydata$eatout,printAll = TRUE)
 ```
 
-We can see in the Fisher test that the p-value is seem to very low and not very something that will happen.
+Fisher's Exact Test is conducted to supplement the results of the Chi-squared test from before. Based on this test, which compared two groups at a time, we can see that the there is a difference in terms of the frequency of eating out between white and black people as shown by the the low p-value of about 0.0003864 . Likewise, the frequency of eating out between white people and others is also difference based on the low p-value of 0.3543 . However, this test also shows that there is no difference between the frequency of eating out of black people and others given that the p-value is 
+0.2815.
+
+### Discussion and Conclusion
 
 
-
+The question being responded to in this activity is whether there is a difference in the recurrence of eating out of different racial groups. The frist l test led is plotting a barplot of the information, and the assessed values show that there is a difference in the recurrence of eating out among the groups. This is additionally affirmed by the numerical results which showed the actual values in terms of percentages of people who eat out and do not eat out for each group. 
+In conclusion, the Chi-squared test and the Fisher's Exact test affirmed that there is a difference between the recurrence of eating out among white and black people and others.In any case, it likewise guarantees that there isn't a difference in the data for black people and others. Generally speaking, we can reject the null hypothesis and claim that there is a difference in the frequency of eating out of various racial groups.
 
 
 

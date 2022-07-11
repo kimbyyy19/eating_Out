@@ -33,14 +33,16 @@ mydata <- na.omit(mydata)
 ```
 
 
+
+### Graphical Results
 ```{r}
 barchartGC(~race + eatout,data=mydata)
 barchartGC(~race + eatout,data=mydata, type="percent")
 
 ```
 
+Based on the frequency table above, which shows the volume of people who eat out and people who do not eat out for each racial group, we can see that about 950 white people eat out while about 200 do not. Meanwhile, about 200 black people eat out while about 100 do not. For the other racial groups, about 100 people eat out while about 50 do not. Putting this into percentages,80% of white people eat out while 20% do not. Meanwhile black and others have about the same percentages with 70% of the people eat out while 30% do not.    
 
-First,when looking at Frequency we look at the white man about 950 ,black man is about 150 and the other is about 100 that have been servers and when looking at the percent it's about 80% of the white people that goes out while with black and other they  have 65% almost the same amount.
 
 
 ```{r}
@@ -56,12 +58,13 @@ We can see that in the white that said yes was 82.83%, while with the black that
 
 
 
-
-
 ```{r}
 chisq.test(table2)
 chisqtestGC(table2)
+fisher.test(table2)
 ```
+
+
 
 
 
@@ -132,7 +135,7 @@ fisherXY = function(x, y, confL = 0, printAll=FALSE){
 
 ```
 ```{r}
-fisherXY(mydata$race,mydata$eatout)
+fisherXY(mydata$race,mydata$eatout,printAll = TRUE)
 ```
 
 We can see in the Fisher test that the p-value is seem to very low and not very something that will happen.
